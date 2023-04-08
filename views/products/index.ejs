@@ -7,12 +7,15 @@
     <title>Products</title>
 </head>
 <body>
-    <h1>All products</h1>
+    <h1><%= category[0].toUpperCase()+ category.substring(1)  %> products</h1>
     <ul>
         <% for(let product of products) { %>
         <li><a href="/products/<%= product._id %>"> <%= product.name %> </a></li>    
         <% } %>
     </ul>
     <a href="/products/new">Add new Product</a>
+    <% if(category !== 'All') { %>
+    <a href="/products">All Products</a>
+    <% } %>
 </body>
 </html>
