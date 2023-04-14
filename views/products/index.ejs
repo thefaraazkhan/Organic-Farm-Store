@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Products</title>
-</head>
-<body>
-    <h1><%= category[0].toUpperCase()+ category.substring(1)  %> products</h1>
-    <ul>
+  </head>
+  <body>
+    <div class="header">
+      <h1><%= category[0].toUpperCase()+ category.substring(1) %> products</h1>
+    </div>
+    <div class="box-container">
+      <ul>
         <% for(let product of products) { %>
-        <li><a href="/products/<%= product._id %>"> <%= product.name %> </a></li>    
+        <div class="box">
+          <li>
+            <a href="/products/<%= product._id %>"> <%= product.name %> </a>
+          </li>
+        </div>
         <% } %>
-    </ul>
-    <a href="/products/new">Add new Product</a>
-    <% if(category !== 'All') { %>
-    <a href="/products">All Products</a>
-    <% } %>
-</body>
+      </ul>
+      
+      <div class="new-product-btn">
+        <a href="/products/new">Add new Product</a>
+      </div>
+
+      <div class="all-product-btn">
+        <% if(category !== 'All') { %>
+            <a href="/products">All Products</a>
+        <% } %>
+      </div>
+      
+      <div class="footer">
+        <p>Footer</p>
+      </div>
+
+    </div>
+  </body>
 </html>
