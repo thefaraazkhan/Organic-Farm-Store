@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
+const AppError = require('./AppError');
 
 //Adding mongoose
 const mongoose = require('mongoose');
@@ -47,9 +48,12 @@ app.post('/products', async (req,res) => {
     res.redirect(`products/${newProduct._id}`);
 })
 
-app.get('/products/:id', async (req,res) => {
+app.get('/products/:id', async (req,res, next) => {
     const { id } = req.params;
     const product = await Product.findById(id);
+    if (!product) {
+        return next(new AppError('Product not found', 404));
+    }
     res.render('products/show', { product });
 })
 
@@ -71,6 +75,11 @@ app.delete('/products/:id', async (req,res) => {
     res.redirect('/products');
 })
  
+app.use((err, req, res, next) => {
+    const { status = 500, message = 'Something went wrong' } = err;
+    res.status(status).send(message);
+})
+
 app.listen(3000, () => {
     console.log('Listening on port 3000')
 });
