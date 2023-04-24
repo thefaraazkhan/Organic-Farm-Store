@@ -18,37 +18,20 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Products</title>
+    <title>All Farms</title>
   </head>
   <body>
     <div class="header">
-      <h1><%= category[0].toUpperCase()+ category.substring(1) %> products</h1>
+      <h1>All Farms</h1>
     </div>
-    <div class="box-container">
-      <ul>
-        <% for(let product of products) { %>
-        <div class="box">
-          <li>
-            <a href="/products/<%= product._id %>"> <%= product.name %> </a>
-          </li>
-        </div>
-        <% } %>
-      </ul>
-      
-      <div class="new-product-btn">
-        <a href="/products/new">Add new Product</a>
-      </div>
-
-      <div class="all-product-btn">
-        <% if(category !== 'All') { %>
-            <a href="/products">All Products</a>
-        <% } %>
-      </div>
-      
-      <div class="footer">
-        <p>Footer</p>
-      </div>
-
-    </div>
+    <ul>
+        <% for(let farm of farms) { %>
+            <li>
+                <a href="/farms/<%= farm._id %>"> <%= farm.name %> </a>
+            </li>
+        <% } %>    
+    </ul>
+    <a href="/farms/new">Add New Farm</a>
   </body>
 </html>
+

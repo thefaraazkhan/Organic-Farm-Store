@@ -1,0 +1,5 @@
+{ "_id" : ObjectId("64302ff771ec2b431317d374"), "name" : "Jumbo Pumkin", "price" : 2.99, "category" : "vegetable", "__v" : 0 }
+{ "_id" : ObjectId("64306496cfd13093b7517e1c"), "name" : "Blue Cheese", "price" : 9.99, "category" : "dairy", "__v" : 0 }
+{ "_id" : ObjectId("64306ba596ead9d7575289c2"), "name" : "Croissant", "price" : 1.99, "category" : "bakery", "__v" : 0 }
+{ "_id" : ObjectId("64319e5c8cc23cf741d1467c"), "name" : "Mini Strawberries", "price" : 1.5, "category" : "fruit", "__v" : 0 }
+{ "_id" : ObjectId("64319e758cc23cf741d14680"), "name" : "Fresh Celery", "price" : 1, "category" : "vegetable", "__v" : 0 }

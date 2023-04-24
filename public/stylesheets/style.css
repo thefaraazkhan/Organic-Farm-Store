@@ -48,7 +48,7 @@
 }
 
 
-/* .box {
+.box {
     font-size: 30px;
     list-style-type: none;
     text-decoration: none;
@@ -59,7 +59,7 @@
     height: max-content;
     width: calc( 100% / 3);
     margin: 25px;   
-} */
+}
 
 .footer {
     position: fixed;
